@@ -1,0 +1,2 @@
+v0.1.0, 2021-10-24 -- Initial version
+v1.0.2, 2026-06-11 -- Fixed logging levels

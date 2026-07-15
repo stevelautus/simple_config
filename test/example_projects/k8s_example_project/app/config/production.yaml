@@ -1,0 +1,5 @@
+logging:
+    file_name: 'k8s_example_project.log'
+    directory: '{config.project_dir}/shared/log'
+    level: 'WARNING'
+    format: '%(asctime)s %(message)s'

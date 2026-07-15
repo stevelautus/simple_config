@@ -1,0 +1,3 @@
+databases:
+    replica:
+        host: 'overriden_replica_host'

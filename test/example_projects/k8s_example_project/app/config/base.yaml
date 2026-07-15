@@ -1,0 +1,32 @@
+workspace:
+    log_dir: '{config.workspace_dir}/logs'
+
+deploy:
+    project_dir: '/deploy/{config.project_name}'
+    package_dir: '/deploy/{config.project_name}/packages'
+    release_dir: '/deploy/{config.project_name}/releases'
+    current_dir: '/deploy/{config.project_name}/current'
+    venv_dir: '/deploy/{config.project_name}/venv'
+    release_ts_format: '%Y%m%d%H%M%S'
+
+logging:
+    log_line_format: '%(asctime)s - %(name)s - pid:%(process)d - %(levelname)s - %(message)s'
+    log_date_format: '%H:%M:%S'
+    handlers:
+        -
+            name: 'stdout'
+            level: 'INFO'
+        -
+            name: 'dated_file'
+            level: 'DEBUG'
+        -
+            name: 'error'
+            level: 'ERROR'
+            mailhost: 'localhost'
+            fromaddr: 25
+            toaddrs:
+                - 'engineering@example.com'
+
+database:
+    seeds_dir: '{config.project_dir}/db/seeds/{config.mode}'
+
